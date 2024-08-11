@@ -1,16 +1,13 @@
 package com.Sorting.SelectionSort;
-
 import com.practice.Array;
-
 import java.util.Arrays;
-
 public class SelectionSortAlgorithm {
     public static void main(String[] args) {
         int[] arr = {5, 4, 3, 2, 1};
         selectionSort(arr);
         System.out.println(Arrays.toString(arr));
-
     }
+    
     static void selectionSort(int[] arr){
         for (int i = 0; i < arr.length; i++) {
             // find the max item in the remaining array and swap with correct index
@@ -24,7 +21,6 @@ public class SelectionSortAlgorithm {
         int temp = arr[first]; // its juz swapping the elements
         arr[first] = arr[second];
         arr[second] = temp;
-
     }
 
     static int getMatIndex(int[] arr, int start, int end) {
