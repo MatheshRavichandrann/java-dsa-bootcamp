@@ -7,19 +7,19 @@ public class BubbleSortAlgorithm {
         System.out.println(Arrays.toString(arr));
 
     }
-    static void bubble(int[] nums){
+    static void bubble(int[] arr){
         // run the steps n-1 times
         boolean swapped; // juz for knowing if its already sorted or not. // we can remove the boolean if we want.-
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             swapped = false;
             // for each step, the max element come at the last respective index
-            for (int j = 1; j < nums.length - i; j++) {
+            for (int j = 1; j < arr.length - i; j++) {
                 // swap if the element is smaller than the previous element
-                if (nums[j] < nums[j-1]){
+                if (arr[j] < arr[j-1]){
                     // swap
-                    int temp = nums[j];
-                    nums[j] = nums[j-1];
-                    nums[j-1] = temp;
+                    int temp = arr[j];
+                    arr[j] = arr[j-1];
+                    arr[j-1] = temp;
                     swapped = true;
                 }
             }
