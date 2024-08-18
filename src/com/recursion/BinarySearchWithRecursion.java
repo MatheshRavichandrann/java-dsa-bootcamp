@@ -3,7 +3,7 @@ package com.recursion;
 public class BinarySearchWithRecursion {
     public static void main(String[] args) {
         int[] arr = {1, 2, 33, 45, 67, 88, 90, 99};
-        int target = 88;
+        int target = 55;
         System.out.println(search(arr, target, 0, arr.length - 1));
     }
     static int search(int[] arr, int target, int start, int end){
