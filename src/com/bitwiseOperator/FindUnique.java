@@ -10,7 +10,10 @@ public class FindUnique {
         int unique = 0;
 
         for (int n : arr){
-            unique = unique ^ n;
+//            unique = unique ^ n;
+            unique ^= n; // shorthand
+//          b += a; (line 15 and 16 for reference)
+//          b = b + a;
         }
         return unique;
     }
