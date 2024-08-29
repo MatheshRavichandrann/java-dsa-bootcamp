@@ -1,6 +1,6 @@
     package com.recursion;
     //
-    class Solution {
+    class IsPowerOfTwo {
         public static void main(String[] args) {
             boolean ans = isPowerOfTwo(3);
             System.out.println(ans);

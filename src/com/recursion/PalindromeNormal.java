@@ -1,5 +1,5 @@
 package com.recursion;
-public class Palindrome {
+public class PalindromeNormal {
     public static void main(String[] args) {
         int i = 23456;
         String val = String.valueOf(i);
