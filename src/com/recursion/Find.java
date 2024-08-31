@@ -10,9 +10,14 @@ public class Find {
         findAllIndex(arr, 5, 0);
         System.out.println(list);
 
+
+
         // Dynamic list method
         ArrayList<Integer> list1 = new ArrayList<>();
         System.out.println(findAllIndex(arr, 5, 0, list1));
+
+        // Creating ArrayList in every function call
+        System.out.println(finALlIndexApproach2(arr, 5, 0));
 
     }
 
@@ -73,5 +78,20 @@ public class Find {
             list1.add(index);
         }
         return findAllIndex(arr, 5, index+1, list1);
+    }
+
+    static ArrayList<Integer> finALlIndexApproach2(int[] arr, int target, int index){
+        ArrayList<Integer> list = new ArrayList<>();
+
+        if (index == arr.length){
+            return list;
+        }
+        if (arr[index] == target){
+            list.add(index);
+        }
+
+        ArrayList<Integer> ansFromBelowCalls = finALlIndexApproach2(arr, 5, index+1);
+        list.addAll(ansFromBelowCalls);
+        return list;
     }
 }
