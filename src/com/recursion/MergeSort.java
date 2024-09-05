@@ -2,13 +2,13 @@ package com.recursion;
 import java.util.Arrays;
 public class MergeSort {
     public static void main(String[] args) {
-//        int[] arr = {5, 4, 3, 2, 1};
-//        int[] ans = mergeSort(arr);
-//        System.out.println(Arrays.toString(ans));
-
         int[] arr = {5, 4, 3, 2, 1};
-        mergeSortInplace(arr, 0, arr.length);
-        System.out.println(Arrays.toString(arr));
+        int[] ans = mergeSort(arr);
+        System.out.println(Arrays.toString(ans));
+
+//        int[] arr = {5, 4, 3, 2, 1};
+//        mergeSortInplace(arr, 0, arr.length);
+//        System.out.println(Arrays.toString(arr));
 
     }
 
@@ -56,6 +56,7 @@ public class MergeSort {
             j++;
             k++;
         }
+
         return mix;
     }
 
