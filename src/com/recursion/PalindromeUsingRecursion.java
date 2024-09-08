@@ -9,7 +9,7 @@ public class PalindromeUsingRecursion {
     }
 
     static int rev(int n){
-        int digit = (int) (Math.log10(n)) + 1;
+        int digit = (int) (Math.log10(n)) + 1; // Number of digit
         return helper(n, digit);
     }
 
@@ -19,6 +19,6 @@ public class PalindromeUsingRecursion {
         }
 
         int rem = n % 10;
-        return rem * (int) (int) (Math.pow(10, digit - 1)) + helper(n/10, digit - 1);
+        return rem * (int) (Math.pow(10, digit - 1)) + helper(n/10, digit - 1);
     }
 }

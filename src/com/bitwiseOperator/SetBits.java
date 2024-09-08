@@ -1,5 +1,6 @@
 package com.bitwiseOperator;
 // Brian Kernighan's Algorithm
+// This program finds how many 1 is in the binary of n (1111).
 public class SetBits {
     public static void main(String[] args) {
         int n = 15;

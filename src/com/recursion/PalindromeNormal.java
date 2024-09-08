@@ -1,7 +1,7 @@
 package com.recursion;
 public class PalindromeNormal {
     public static void main(String[] args) {
-        int i = 23456;
+        int i = 101;
         String val = String.valueOf(i);
         System.out.println(palindrome(val));
 

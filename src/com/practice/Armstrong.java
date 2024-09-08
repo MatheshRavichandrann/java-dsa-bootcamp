@@ -27,7 +27,7 @@ public class Armstrong {
             n = n / 10; // it'll remove the last digit tho its int after the (15.3) will omit and after this n consider as 15 after again doing this n will consider as 1 after that n>0 condition gets fails and loop will end also used to end the loop
             sum = sum + rem*rem*rem; // we've to find the cubes and add it together
         }
-        return sum == original; // it would check whether the sum and original are same. if its same it'll pass boolean value as true . or else it'll pass boolean value as fale.
+        return sum == original; // it would check whether the sum and original are same. if its same it'll pass boolean value as true . or else it'll pass boolean value as false.
     }
 
 }
