@@ -1,15 +1,10 @@
-package com.LInkedList;
-
+package com.LinkedList;
 public class LL {
-
     private Node head;
     private Node tail;
-
     private int size;
-
     public LL() {
         this.size = 0;
-
     }
 
     public void insertFirst(int val){
@@ -28,6 +23,7 @@ public class LL {
             insertFirst(val);
             return;
         }
+
         Node node = new Node(val);
         tail.next = node;
         tail = node;
@@ -69,6 +65,18 @@ public class LL {
         return val;
     }
 
+    public Node find(int value){
+        Node node = head;
+        while (node != null){
+            if (node.value == value){
+                return node;
+            }
+            node = node.next;
+
+        }
+        return null;
+    }
+
     public Node get(int index){
         Node node = head;
         for (int i = 0; i < index; i++) {
@@ -105,7 +113,6 @@ public class LL {
             temp = temp.next;
         }
         System.out.println("END");
-
     }
 
     public class Node{
@@ -115,8 +122,6 @@ public class LL {
         public Node(int value) {
             this.value = value;
         }
-
-
 
         public Node(int value, Node next) {
             this.value = value;
