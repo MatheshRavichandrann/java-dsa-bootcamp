@@ -1,7 +1,7 @@
 package com.LinkedList;
 public class Main {
     public static void main(String[] args) {
-//        LL list = new LL();
+//        Linkedlist list = new Linkedlist();
 //        list.insert(5, 0);
 //        list.insert(10, 1);
 //        list.insert(15, 2);
@@ -24,6 +24,7 @@ public class Main {
         list1.insertFirst(22);
         list1.insertFirst(12);
         list1.insertLast(99);
+        list1.insertAfter(22, 69);
         list1.display();
 
     }

@@ -1,9 +1,9 @@
 package com.LinkedList;
-public class LL {
+public class Linkedlist {
     private Node head;
     private Node tail;
     private int size;
-    public LL() {
+    public Linkedlist() {
         this.size = 0;
     }
 

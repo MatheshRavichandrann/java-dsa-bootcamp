@@ -34,6 +34,37 @@ public class DoublyLinkedList {
         node.next = null;
     }
 
+    // Find a Particular Node
+    public Node find(int value){
+        Node node = head;
+        while (node != null){
+            if (node.val == value){
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
+    }
+
+    // Insert After a particular node
+    public void insertAfter(int after, int val){
+        Node p = find(after);
+
+        if (p == null){
+            System.out.println("Does not exist");
+            return;
+        }
+
+        Node node = new Node(val);
+        node.next = p.next;
+        p.next = node;
+        node.prev = p;
+        if (node.next != null){
+            node.next.prev = node;
+        }
+
+    }
+
     // Display the elements of the list
     public void display() {
         Node temp = head;
