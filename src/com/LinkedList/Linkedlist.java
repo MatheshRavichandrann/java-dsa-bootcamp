@@ -51,6 +51,22 @@ public class Linkedlist {
 
     }
 
+
+    public void insertRec(int val, int index){
+        head = insertRec(val, index, head);
+    }
+    private Node insertRec(int val, int index, Node node){
+        if (index == 0){
+            Node temp = new Node(val, node);
+            size++;
+            return temp;
+        }
+
+        node.next = insertRec(val, index -1, node.next);
+        return node;
+    }
+
+
     public int delete(int index){
         if (index == 0){
             return deleteLast();
@@ -128,4 +144,151 @@ public class Linkedlist {
             this.next = next;
         }
     }
+
+    // Questions
+
+
+    public static Linkedlist merge(Linkedlist first, Linkedlist second){
+        Node f = first.head;
+        Node s = second.head;
+
+        Linkedlist ans = new Linkedlist();
+
+        while (f != null && s != null){
+            if (f.value < s.value){
+                ans.insertLast(f.value);
+                f = f.next;
+            }else {
+                ans.insertLast(s.value);
+                s = s.next;
+            }
+        }
+
+        while(f != null){
+            ans.insertLast(f.value);
+            f = f.next;
+        }
+
+        while(s != null){
+            ans.insertLast(s.value);
+            s = s.next;
+        }
+        return ans;
+    }
+
+
+
+    // Has Cycle or not
+    public boolean hasCycle(Node head) {
+        Node fast = head;
+        Node slow = head;
+
+        while(fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+            if(fast == slow){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    // Find length of cycle
+    public int lengthOfCycle(Node head) {
+        Node fast = head;
+        Node slow = head;
+
+        while(fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+            if(fast == slow){
+               // calculate  the length
+                Node temp = slow;
+                int length = 0;
+                do {
+                    temp = temp.next;
+                    length++;
+                }while (temp != slow);
+                return length;
+            }
+        }
+        return 0;
+    }
+
+
+    public Node detectCycle(Node head) {
+        int length = 0;
+
+        Node fast = head;
+        Node slow = head;
+        while(fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow){
+                length = lengthOfCycle(slow);
+                break;
+            }
+        }
+
+        if (length == 0){
+            return null;
+        }
+
+        // Find the start node
+        Node first = head;
+        Node second = head;
+
+        while(length > 0){
+            second = second.next;
+            length--;
+        }
+        // Keep moving both forward and they will meet at cycle
+
+        while (first != second){
+            first = first.next;
+            second = second.next;
+        }
+        return first;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    public static void main(String[] args) {
+        Linkedlist first = new Linkedlist();
+        Linkedlist second = new Linkedlist();
+
+        first.insertLast(1);
+        first.insertLast(3);
+        first.insertLast(5);
+
+        second.insertLast(1);
+        second.insertLast(2);
+        second.insertLast(9);
+        second.insertLast(14);
+
+
+        Linkedlist ans = merge(first, second);
+        ans.display();
+
+
+    }
+
+
+
+
+
+
+
+
+
+
 }
