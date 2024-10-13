@@ -2,8 +2,8 @@ package com.Searching.BinarySearch;
 
 public class BinarySearchImplementation {
     public static void main(String[] args) {
-        int[] arr = {1, 23, 34, 45, 67, 79, 88, 98, 99};
-        int target = 99;
+        int[] arr = {2, 23, 34, 45, 67, 79, 88, 98, 99};
+        int target = 1;
         int ans = binarySearch(arr, target);
 //        System.out.println(ans);
         if (ans == -1){ // cause I'm only returning the -1 haha (if we cant find element)
@@ -30,7 +30,7 @@ public class BinarySearchImplementation {
                  start = mid + 1;
              }
              else { // basically the if and if-else gets false. which means the target == mid or target != mid.
-                 // and found
+                 // ans found
                  return mid; // it'll execute if the target is == mid.
              }
              // we can also write the  else like else-if (target == mid) {return mid;} that's unnecessary
