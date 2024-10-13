@@ -1,5 +1,4 @@
 package com.Sorting.SelectionSort;
-import com.practice.Array;
 import java.util.Arrays;
 public class SelectionSortAlgorithm {
     public static void main(String[] args) {
@@ -12,7 +11,7 @@ public class SelectionSortAlgorithm {
         for (int i = 0; i < arr.length; i++) {
             // find the max item in the remaining array and swap with correct index
             int last = arr.length -i -1; // we're juz ignoring the right end sorted elements with -i
-            int MaxIndex = getMatIndex(arr, 0, last);
+            int MaxIndex = getMaxIndex(arr, 0, last);
             swap(arr, MaxIndex, last);
         }
     }
@@ -23,13 +22,13 @@ public class SelectionSortAlgorithm {
         arr[second] = temp;
     }
 
-    static int getMatIndex(int[] arr, int start, int end) {
-        int max = start;
-        for (int i = start; i <= end ; i++) { // the end in this program 4, so we're checking till 4. 4 <= 4
-            if (arr[i] > arr[max]){
-                max = i; // its juz update the max elements index.
+        static int getMaxIndex(int[] arr, int start, int end) {
+            int max = start;
+            for (int i = start; i <= end ; i++) { // the end in this program 4, so we're checking till 4. 4 <= 4
+                if (arr[i] > arr[max]){
+                    max = i; // its juz update the max elements index.
+                }
             }
+            return max;
         }
-        return max;
-    }
 }
