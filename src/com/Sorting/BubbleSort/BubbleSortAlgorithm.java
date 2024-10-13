@@ -2,7 +2,7 @@ package com.Sorting.BubbleSort;
 import java.util.Arrays;
 public class BubbleSortAlgorithm {
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5};
+        int[] arr = {4, 2, 443, 44, 5};
         bubble(arr);
         System.out.println(Arrays.toString(arr));
 
