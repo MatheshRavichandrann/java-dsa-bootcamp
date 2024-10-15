@@ -1,10 +1,29 @@
-package com.LinkedList;
+ package com.LinkedList;
+
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 public class Linkedlist {
     private Node head;
     private Node tail;
     private int size;
     public Linkedlist() {
         this.size = 0;
+    }
+
+    public class Node{
+        private int value;
+        private Node next;
+
+        public Node(int value) {
+            this.value = value;
+        }
+
+        public Node(int value, Node next) {
+            this.value = value;
+            this.next = next;
+        }
     }
 
     public void insertFirst(int val){
@@ -131,19 +150,7 @@ public class Linkedlist {
         System.out.println("END");
     }
 
-    public class Node{
-        private int value;
-        private Node next;
 
-        public Node(int value) {
-            this.value = value;
-        }
-
-        public Node(int value, Node next) {
-            this.value = value;
-            this.next = next;
-        }
-    }
 
     // Questions
 
@@ -217,9 +224,8 @@ public class Linkedlist {
     }
 
 
-    public Node detectCycle(Node head) {
+    public Node detectCycleStarting(Node head) {
         int length = 0;
-
         Node fast = head;
         Node slow = head;
         while(fast != null && fast.next != null){
@@ -243,8 +249,8 @@ public class Linkedlist {
             second = second.next;
             length--;
         }
-        // Keep moving both forward and they will meet at cycle
 
+        // Keep moving both forward and they will meet at cycle
         while (first != second){
             first = first.next;
             second = second.next;
@@ -281,6 +287,7 @@ public class Linkedlist {
 
 
     }
+
 
 
 
